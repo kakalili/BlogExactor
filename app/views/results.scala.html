@@ -1,0 +1,28 @@
+@(url:String,content:String)
+<?xml version="1.0" encoding="utf-8" ?>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<div>
+	<div>
+		<a href="@routes.Application.index()">ホームを戻る</a>
+	</div>
+	<DIV>
+		<a href="@routes.Application.extractResult(0,url)">テキストだけを見る</a>
+	</DIV>
+	<DIV>
+		<a href="@routes.Application.extractResult(1,url)">テキストHTMLを見る</a>
+	</DIV>
+	<DIV>
+		<a href="@url" target="_blank">資料HTMLを参考する</a>
+	</DIV>
+</div>
+	@if(content.equals("入力したURLがエラー")) {
+		<div class="well" style="background-color:red;">
+		    <em>@content</em>
+		</div>
+	} else {
+		<div>
+		
+		@Html(content)
+		</div>
+	}

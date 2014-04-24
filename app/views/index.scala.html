@@ -1,0 +1,33 @@
+@(urlForm: Form[Application.BlogUrl])
+
+@import helper._
+
+@main(title = "Blog Webpage Extractor") {
+    
+    <h1>
+    		ブログのURLを入れて、サブミットボタンを押してください
+    </h1>
+    
+    @form(action = routes.Application.submit(0), args = 'id -> "urlform") {
+        <dl id="url_field" class=" ">
+
+		    <dt>
+		    	<label for="url">
+		
+		            ブログのURL：
+		
+		        </label>
+		    </dt>
+		    <dd>
+		        <input id="url" type="text" style="width:700px;height:1.8em;" placeholder="http://" value="" name="url"></input>
+		    </dd>
+
+		</dl>
+        
+        <p class="buttons">
+            <input type="submit">
+        <p>
+        
+    }
+    
+}
